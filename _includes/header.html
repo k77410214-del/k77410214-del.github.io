@@ -1,0 +1,28 @@
+<header class="site-header">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <a href="{{ "/" | relative_url }}">
+          {{ site.title }}
+        </a>
+      </div>
+      
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="navbar-menu">
+        {%- for path in page_paths -%}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          {%- if my_page.title -%}
+            <li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title }}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
+        <li><a class="page-link" href="{{ "/about" | relative_url }}">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <h3 class="footer-title">{{ site.title }}</h3>
+      <p class="footer-description">{{ site.description | strip_html }}</p>
+    </div>
+
+    {%- if site.social_links -%}
+      <div class="social-links">
+        {%- for link in site.social_links -%}
+          <a href="{{ link.url }}" title="{{ link.title }}" class="social-link">{{ link.title }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

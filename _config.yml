@@ -18,13 +18,18 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 초록색 테마 블로그
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+
+title: Editorial Magazine Blog
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  멋진 초록색 테마의 개인 블로그입니다.
-  여기서 당신의 이야기와 생각을 나누세요.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+description: >-
+  A clean, typography-focused editorial blog built with Jekyll.
+  Share your ideas with style and clarity.
+
+baseurl: ""
+url: ""
 twitter_username: jekyllrb
 github_username:  jekyll
 
@@ -33,20 +38,16 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Date format
+date_format: "%b %-d, %Y"
+
 # Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
 #   - node_modules/
 #   - vendor/bundle/
 #   - vendor/cache/

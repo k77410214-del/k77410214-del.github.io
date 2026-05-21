@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<div class="page-article">
+  <header class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+  </header>
+
+  <div class="page-content">
+    {{ content }}
+  </div>
+</div>
+
+<style>
+  .page-article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #ecf0f1;
+  }
+
+  .page-title {
+    font-family: "Lora", "Georgia", serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #2c3e50;
+  }
+
+  .page-content {
+    margin-bottom: 64px;
+    line-height: 1.8;
+    color: #2c3e50;
+  }
+
+  .page-content h2 {
+    font-size: 2rem;
+    margin-top: 48px;
+    margin-bottom: 24px;
+    color: #2c3e50;
+  }
+
+  .page-content p {
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2rem;
+    }
+
+    .page-content h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
