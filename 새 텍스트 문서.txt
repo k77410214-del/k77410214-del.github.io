@@ -1,3 +1,5 @@
 cd desktop/k77410214-del.github.io
 
 jekyll serve
+
+명령프롬포트
