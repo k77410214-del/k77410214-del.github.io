@@ -1,7 +1,5 @@
 ---
 layout: home
-title: Editorial Magazine Blog
-subtitle: A quiet publishing space for essays, notes, and thoughtful stories.
+title: Scroll Driven Stories
+subtitle: A fullscreen presentation site for creative work, sharp ideas, and cinematic reading.
 ---
-
-Write slowly, publish clearly, and keep the reading experience calm. Recent posts are collected below.

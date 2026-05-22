@@ -3,7 +3,7 @@
     <div class="navbar-container">
       <div class="navbar-brand">
         <a href="{{ "/" | relative_url }}">
-          {{ site.title }}
+          Scroll Driven Stories
         </a>
       </div>
       
@@ -15,13 +15,9 @@
       </label>
 
       <ul class="navbar-menu">
-        {%- for path in page_paths -%}
-          {%- assign my_page = site.pages | where: "path", path | first -%}
-          {%- if my_page.title -%}
-            <li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title }}</a></li>
-          {%- endif -%}
-        {%- endfor -%}
-        <li><a class="page-link" href="{{ "/about" | relative_url }}">About</a></li>
+        <li><a class="page-link" href="{{ "/" | relative_url }}#work">Work</a></li>
+        <li><a class="page-link" href="{{ "/" | relative_url }}#studio">Studio</a></li>
+        <li><a class="page-link" href="{{ "/" | relative_url }}#notes">Notes</a></li>
       </ul>
     </div>
   </nav>

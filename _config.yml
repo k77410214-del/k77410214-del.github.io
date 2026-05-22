@@ -22,11 +22,11 @@
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 
-title: Editorial Magazine Blog
+title: Scroll Driven Stories
 email: your-email@example.com
 description: >-
-  A clean, typography-focused editorial blog built with Jekyll.
-  Share your ideas with style and clarity.
+  A fullscreen presentation site for creative work, sharp ideas,
+  and cinematic reading.
 
 baseurl: ""
 url: ""

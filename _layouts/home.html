@@ -2,56 +2,60 @@
 layout: default
 ---
 
-<section class="hero-section">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-kicker">Journal</p>
-    <h1 class="hero-title">{{ page.title | default: site.title }}</h1>
-    <p class="hero-subtitle">{{ page.subtitle | default: site.description | strip_html }}</p>
-  </div>
-  <a class="hero-scroll" href="#articles" aria-label="Skip to articles"></a>
-</section>
-
-<div class="content-container">
-  {%- if page.content -%}
-    <div class="page-intro">
-      {{ page.content }}
+<div class="fullscreen-page">
+  <section class="snap-section landing-hero section-dark section-image" id="top">
+    <div class="section-bg"></div>
+    <div class="section-inner section-center reveal">
+      <p class="section-kicker">Creative Portfolio</p>
+      <h1 class="landing-title">{{ page.title | default: site.title }}</h1>
+      <p class="landing-subtitle">{{ page.subtitle | default: site.description | strip_html }}</p>
     </div>
-  {%- endif -%}
+    <a class="section-scroll" href="#work" aria-label="Scroll to work"></a>
+  </section>
 
-  {%- if site.posts.size > 0 -%}
-    <section class="posts-section" id="articles">
-      <h2 class="posts-heading">Latest Articles</h2>
-
-      <div class="posts-list">
-        {%- for post in site.posts -%}
-          <article class="post-card">
-            <p class="post-card-meta">
-              <time datetime="{{ post.date | date_to_xmlschema }}">
-                {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-                {{ post.date | date: date_format }}
-              </time>
-              {%- if post.author -%}
-                <span class="post-author">by {{ post.author }}</span>
-              {%- endif -%}
-            </p>
-
-            <h3 class="post-card-title">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h3>
-
-            <div class="post-card-excerpt">
-              {%- if post.excerpt -%}
-                {{ post.excerpt }}
-              {%- else -%}
-                {{ post.content | strip_html | truncatewords: 30 }}
-              {%- endif -%}
-            </div>
-
-            <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
-          </article>
-        {%- endfor -%}
+  <section class="snap-section section-light" id="work">
+    <div class="section-inner split-layout reveal">
+      <div>
+        <p class="section-kicker">01 / Work</p>
+        <h2 class="section-title">Fullscreen stories with sharp rhythm.</h2>
       </div>
-    </section>
-  {%- endif -%}
+      <div class="section-copy">
+        <p>Every section behaves like a presentation slide: oversized, focused, and built for one strong idea at a time.</p>
+        <a class="section-link" href="#studio">Explore the direction</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="snap-section section-dark" id="studio">
+    <div class="section-inner feature-layout reveal">
+      <p class="section-kicker">02 / Studio</p>
+      <h2 class="section-title">Minimal motion. Cinematic scale.</h2>
+      <p class="section-copy wide-copy">A monochrome system with muted highlights, generous spacing, and scroll-driven transitions that keep the site immersive without feeling heavy.</p>
+    </div>
+  </section>
+
+  <section class="snap-section section-light" id="notes">
+    <div class="section-inner reveal">
+      <div class="section-heading-row">
+        <p class="section-kicker">03 / Notes</p>
+        <h2 class="section-title">Latest writing</h2>
+      </div>
+
+      {%- if site.posts.size > 0 -%}
+        <div class="landing-posts">
+          {%- for post in site.posts limit: 3 -%}
+            <article class="landing-post">
+              <p class="post-card-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">
+                  {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+                  {{ post.date | date: date_format }}
+                </time>
+              </p>
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            </article>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
 </div>
