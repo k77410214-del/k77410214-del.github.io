@@ -2,16 +2,16 @@
 layout: default
 ---
 
-<!-- Hero Section -->
-<div class="hero-section">
+<section class="hero-section">
   <div class="hero-overlay"></div>
   <div class="hero-content">
+    <p class="hero-kicker">Journal</p>
     <h1 class="hero-title">{{ page.title | default: site.title }}</h1>
     <p class="hero-subtitle">{{ page.subtitle | default: site.description | strip_html }}</p>
   </div>
-</div>
+  <a class="hero-scroll" href="#articles" aria-label="Skip to articles"></a>
+</section>
 
-<!-- Main Content -->
 <div class="content-container">
   {%- if page.content -%}
     <div class="page-intro">
@@ -20,27 +20,26 @@ layout: default
   {%- endif -%}
 
   {%- if site.posts.size > 0 -%}
-    <section class="posts-section">
+    <section class="posts-section" id="articles">
       <h2 class="posts-heading">Latest Articles</h2>
-      
+
       <div class="posts-list">
         {%- for post in site.posts -%}
           <article class="post-card">
-            <div class="post-card-header">
-              <h3 class="post-card-title">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              </h3>
-              <p class="post-card-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">
-                  {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-                  {{ post.date | date: date_format }}
-                </time>
-                {%- if post.author -%}
-                  <span class="post-author">by {{ post.author }}</span>
-                {%- endif -%}
-              </p>
-            </div>
-            
+            <p class="post-card-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">
+                {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+                {{ post.date | date: date_format }}
+              </time>
+              {%- if post.author -%}
+                <span class="post-author">by {{ post.author }}</span>
+              {%- endif -%}
+            </p>
+
+            <h3 class="post-card-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+
             <div class="post-card-excerpt">
               {%- if post.excerpt -%}
                 {{ post.excerpt }}
@@ -48,8 +47,8 @@ layout: default
                 {{ post.content | strip_html | truncatewords: 30 }}
               {%- endif -%}
             </div>
-            
-            <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+
+            <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
           </article>
         {%- endfor -%}
       </div>
